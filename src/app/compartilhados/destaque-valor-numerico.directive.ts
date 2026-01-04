@@ -5,6 +5,7 @@ import { afterRender, Directive, ElementRef, input } from "@angular/core";
 })
 export class DestaqueValorNumeroDirective {
     appDestaqueValorNumerico = input.required<number>();
+    
     corPositiva = input("var(--destaque-receita)");
     corNegativa = input("var(--destaque-despesa)");
 

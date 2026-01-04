@@ -1,10 +1,8 @@
-<section class="contas-card">
-  <div class="titulo-wrapper">
+<app-card>
+  <ng-container card-titulo>
     <h2 class="texto-lg">Minhas contas</h2>
-  </div>
-
-  <div class="corpo-card">
-    <div class="contas-e-botao">
+  </ng-container>
+  <div class="contas-e-botao">
       <ul>
         @for (conta of contas(); track conta.nome) {
           <li class="item-entre-divisorias">
@@ -17,10 +15,6 @@
         }
       </ul>
   
-      <app-botao class="botao-adicionar-conta">
-        <img src="icones/carteira.svg" alt="" class="icone-carteira">
-        Adicionar conta
-      </app-botao>
-    </div>
+      <app-botao-adicionar-conta class="botao-adicionar-conta"(contaCriada)="contaCriada.emit($event)" />    
   </div>
-</section>
+</app-card>
